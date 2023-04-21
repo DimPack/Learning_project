@@ -1,0 +1,1 @@
+let numberOfFilms =  prompt('Скільки фільмів ви вже подивилися?');
