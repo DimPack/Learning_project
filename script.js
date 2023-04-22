@@ -11,5 +11,5 @@ const personalMovieDB = {
     privat: false
 };
 
-let lastMovie = prompt('Який ваш один з останіх перегляних фільмів?');
+let nameMovie = prompt('Який ваш один з останіх перегляних фільмів?');
 let ratingMovie = prompt('На скільки оцінете його?');
