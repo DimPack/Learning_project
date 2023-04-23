@@ -1,6 +1,6 @@
 "use strict"
 
-let numberOfFilms = prompt('Скільки фільмів ви вже подивилися?');
+const numberOfFilms = prompt('Скільки фільмів ви вже подивилися?');
 
 
 const personalMovieDB = {
@@ -11,5 +11,13 @@ const personalMovieDB = {
     privat: false
 };
 
-let nameMovie = prompt('Який ваш один з останіх перегляних фільмів?');
-let ratingMovie = prompt('На скільки оцінете його?');
+let nameMovie,
+    ratingMovie;
+
+for (let i = 0; i < 2; i++) {
+    nameMovie = prompt('Який ваш один з останіх перегляних фільмів?');
+    ratingMovie = prompt('На скільки оцінете його?');
+    personalMovieDB.movies[nameMovie] = ratingMovie;
+};
+
+console.log(personalMovieDB)
