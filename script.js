@@ -38,13 +38,43 @@ if (personalMovieDB.count <= 10) {
 } else {
     alert('Щось сталося не так!'); 
 }
-// let nameMovie,
-//     ratingMovie;
+let nameMovie,
+    ratingMovie,
+    i = 1;
+do {
+    nameMovie = prompt(`Який ваш один з останіх перегляних фільмів? ${i} із 2`);
+    if (nameMovie === '') {
+        alert('Ви нічого не ввели!');
+        // continue;
+    }
+    if (nameMovie === null) {
+        alert('Ви не дали відповіді!');
+        continue;
+    }
+    if (nameMovie.length > 50) {
+        alert('Ви ввели більше 50 символів!');
+    }
+    do {
+        ratingMovie = prompt('На скільки оцінете його від 1 до 10?');
+        if (isNaN(numberOfFilms)) {
+            alert('Відповідь має бути числовою!');
+        }
+        if (ratingMovie === '') {
+            alert('Ви нічого не ввели!');
+        }
+        if (ratingMovie === null) {
+            alert('Ви не дали відповіді!');
+            continue;
+        }
+        if (ratingMovie.length > 50) {
+            alert('Ви ввели більше 50 символів!');
+        }
+        if (ratingMovie > 10) {
+            alert('Ви оцінили більше чим на 10!');
+        }
+    } while (ratingMovie === '' || ratingMovie === null || ratingMovie > 10);
+    personalMovieDB.movies[nameMovie] = ratingMovie;
+    i++;
+}while (nameMovie === '' || nameMovie === null || nameMovie.length > 50 || i <= 2);
 
-// for (let i = 0; i < 2; i++) {
-//     nameMovie = prompt('Який ваш один з останіх перегляних фільмів?');
-//     ratingMovie = prompt('На скільки оцінете його?');
-//     personalMovieDB.movies[nameMovie] = ratingMovie;
-// };
-
-console.log(personalMovieDB)
+console.log(personalMovieDB);
