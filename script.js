@@ -42,7 +42,7 @@ let nameMovie,
     ratingMovie,
     i = 1;
 do {
-    nameMovie = prompt(`Який ваш один з останіх перегляних фільмів? ${i} із 2`);
+    nameMovie = prompt(`Який ваш один з останіх перегляних фільмів? ${i} із 2`,'');
     if (nameMovie === '') {
         alert('Ви нічого не ввели!');
         // continue;
@@ -55,7 +55,7 @@ do {
         alert('Ви ввели більше 50 символів!');
     }
     do {
-        ratingMovie = prompt('На скільки оцінете його від 1 до 10?');
+        ratingMovie = prompt('На скільки оцінете його від 1 до 10?','');
         if (isNaN(numberOfFilms)) {
             alert('Відповідь має бути числовою!');
         }
