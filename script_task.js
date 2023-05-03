@@ -155,3 +155,40 @@ for(let i = 0; i <= lines; i++) {
 console.log(res);
 
 /*------Christmas tree task-------*/
+
+
+
+/*task 2 lessons 27*/
+function returnNeighboringNumbers(number) {
+    if(typeof(number)!= 'number') return
+    let arr = [];
+    arr[0] = number - 1;
+    arr[1] = number;
+    arr[2] = number + 1;
+   return console.log(arr);   
+}
+returnNeighboringNumbers(5)
+
+
+
+/* task 3 lessons 27*/
+function getMathResult(a, b) {
+    let resultsNumber = '';
+
+    if (typeof(b)!= 'number' || b <= 0){
+        return console.log(a);
+    } else {
+        for (let i = 1; i <= b; i++) {
+        
+            if(i === b) {
+                resultsNumber += `${a * i}`;
+            } else {
+                resultsNumber += `${a * i}---`; 
+            }
+        }
+
+        console.log(resultsNumber);
+    }
+}
+getMathResult(3, 10);
+

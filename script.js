@@ -6,11 +6,9 @@ do {
     numberOfFilms = prompt('Скільки фільмів ви вже подивилися?', '');
     if (isNaN(numberOfFilms)) {
         alert('Відповідь має бути числовою!');
-        // continue; 
     }
     if (numberOfFilms === '') {
         alert('Ви нічого не ввели!');
-        // continue;
     }
     if (numberOfFilms === null) {
         alert('Ви не дали відповіді!');
@@ -18,10 +16,9 @@ do {
     }
     if (numberOfFilms.length > 50) {
         alert('Ви ввели більше 50 символів!');
-        // continue;
     }
 } while (isNaN(numberOfFilms) || numberOfFilms === '' || numberOfFilms === null || numberOfFilms.length > 50);
-// console.log(numberOfFilms.length);
+
 const personalMovieDB = {
     count: numberOfFilms,
     movies: {},
@@ -33,8 +30,8 @@ if (personalMovieDB.count <= 10) {
     alert('Ви переглянули мало фільмів!');
 } else if (personalMovieDB.count > 10 && personalMovieDB.count < 30){
     alert('Ви класичний кіноглядач!');
-} else if (personalMovieDB.count > 30){
-    alert('Ви КІНОМАН!');
+} else if (personalMovieDB.count >= 30){
+    alert('Ви Кіноман!');
 } else {
     alert('Щось сталося не так!'); 
 }
@@ -45,7 +42,6 @@ do {
     nameMovie = prompt(`Який ваш один з останіх перегляних фільмів? ${i} із 2`,'');
     if (nameMovie === '') {
         alert('Ви нічого не ввели!');
-        // continue;
     }
     if (nameMovie === null) {
         alert('Ви не дали відповіді!');
