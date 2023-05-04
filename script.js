@@ -1,6 +1,5 @@
 "use strict"
 
-/* ******************** TASK_1 ************************************ */
 const personalMovieDB = {
     count: '',
     movies: {},
@@ -9,14 +8,15 @@ const personalMovieDB = {
     privat: false
 };
 
-let numberMovies = 'Скільки фільмів Ви вже подивилися?';
-let lastMovies = 'Який ваш один з останіх перегляних фільмів?';
-let raitingLastMovies = 'На скільки оцінете його від 1 до 10?';
+let numberMovies = 'Скільки фільмів Ви вже подивилися?',
+    lastMovies = 'Який ваш один з останіх перегляних фільмів?',
+    raitingLastMovies = 'На скільки оцінете його від 1 до 10?';
 
 personalMovieDB.count = checkupQuetion(numberMovies);
 ratingClient();
 movieTitlesAndTheirRating(lastMovies, raitingLastMovies);
-
+writeYourGenres();
+showMyDB(personalMovieDB.privat);
 
 function checkupQuetion(quetion) {
     let answer;
@@ -70,29 +70,53 @@ function movieTitlesAndTheirRating(lastMovies, raitingLastMovies) {
             continue;
         }
         if (isNaN(nameMovie) ||  nameMovie > 10 || nameMovie.length > 50 || nameMovie === '' || nameMovie === null) {
-            do {
-                ratingMovie = prompt(`${raitingLastMovies}`,'');
-                if (isNaN(ratingMovie)) {
-                    alert('Відповідь має бути числовою!');
-                }
-                if (ratingMovie === '') {
-                    alert('Ви нічого не ввели!');
-                }
-                if (ratingMovie === null) {
-                    alert('Ви не дали відповіді!');
-                    continue;
-                }
-                if (ratingMovie.length > 50) {
-                    alert('Ви ввели більше 50 символів!');
-                }
-                if (ratingMovie > 10) {
-                    alert('Ви оцінили більше чим на 10!');
-                }
-            } while (isNaN(ratingMovie) || ratingMovie === '' || ratingMovie === null || ratingMovie > 10 || ratingMovie.length > 50);
+
+            ratingMovie = checkupQuetion(raitingLastMovies)
+            while (ratingMovie > 10) {
+                alert('Ви оцінили більше чим на 10!');
+                ratingMovie = checkupQuetion(raitingLastMovies)
+            }
+            personalMovieDB.movies[nameMovie] = ratingMovie;
         }
-        personalMovieDB.movies[nameMovie] = ratingMovie;
+        
         i++;
     }while ((nameMovie === '' || nameMovie === null || nameMovie.length > 50) || i <= 2);
 }
 
-console.log(personalMovieDB);
+function showMyDB(hidden) {
+    if (!hidden) {
+        alert('Privat is false!');
+        console.log(personalMovieDB);
+    } else {
+        alert('Privat is true!');
+    }
+}
+
+function writeYourGenres() {
+    let i = 1,
+        j = 0,
+        genres;
+    do {
+        genres = prompt(`Який ваш улюблений жанр ? вкажіть по одному ${i} із 3`, '');
+
+        if (!isNaN(genres)) {
+            alert('Жанр не може бути числовим!');
+            continue
+        }
+        if (genres === '') {
+            alert('Ви нічого не ввели!');
+            continue
+        }
+        if (genres === null) {
+            alert('Ви не дали відповіді!');
+            continue;
+        }
+        if (genres.length > 50) {
+            alert('Ви ввели більше 50 символів!');
+            continue
+        }
+        i++;
+        personalMovieDB.genres[j]= genres;
+        j++;
+    } while (genres === '' || genres === null || genres.length > 50 || genres === 'number' || i <= 3);
+}
