@@ -192,3 +192,165 @@ function getMathResult(a, b) {
 }
 getMathResult(3, 10);
 
+/*task code number 7 */
+
+function calculateVolumeAndArea(num) {
+    let Vcube = 0,
+        Acube = 0;
+    if (typeof(num) != 'number'|| !Number.isInteger(num) || num < 0 ) {
+        console.log('При розрахунках сталася помилка!');
+    } else {
+        Vcube = Math.pow(num, 3);
+        Acube = 6 * Math.pow(num, 2);
+        console.log(`Об'єм куба: ${Vcube}, площа всієї поверхності: ${Acube}`);
+    }
+}
+calculateVolumeAndArea(5);
+
+
+
+function getCoupeNumber(num_place) {
+    if (typeof(num_place) != 'number'|| !Number.isInteger(num_place) || num_place < 0 ) {
+        return 'Помилка. Перевірьте правильність вашого місця';
+
+    } 
+    if (num_place > 36 || num_place === 0) {
+        return 'Таких місць в вагоні не існує.';
+    } else {
+        switch (num_place) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                return'1';
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+                return'2';
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+                return'3';
+            case 13:
+            case 14:
+            case 15:
+            case 16:
+                return'4';
+            case 17:
+            case 18:
+            case 19:
+            case 20:
+                return'5';
+            case 21:
+            case 22:
+            case 23:
+            case 24:
+                return'6';
+            case 25:
+            case 26:
+            case 27:
+            case 28:
+                return'7';
+            case 29:
+            case 30:
+            case 31:
+            case 32:
+                return'8';
+            case 33:
+            case 34:
+            case 35:
+            case 36:
+                return'9';
+        }
+    }
+} 
+getCoupeNumber(0);
+
+/*TASKS with number 8 */
+
+function getTimeFromMinutes(minutesTotal) {
+    if (typeof(minutesTotal) !== 'number' || minutesTotal < 0 || !Number.isInteger(minutesTotal)) {
+        return "Ошибка, проверьте данные";
+    }
+
+    const hours = Math.floor(minutesTotal / 60);
+    const minutes = minutesTotal % 60;
+
+    let hoursStr = '';
+
+    switch (hours) {
+        case 0: 
+            hoursStr = 'часов';
+            break;
+        case 1:
+            hoursStr = 'час';
+            break;
+        case 2:
+        case 3:
+        case 4:
+            hoursStr = 'часа';
+            break;
+        default:
+            hoursStr = 'часов';
+    }
+
+    return `Это ${hours} ${hoursStr} и ${minutes} минут`;
+}
+getTimeFromMinutes(62);
+
+
+
+function findMaxNumber(a, b, c, d) {
+    if(typeof(a) != 'number' || a < 0 || typeof(b) != 'number' || b < 0 || typeof(c) != 'number' || c < 0 || typeof(d) != 'number' || d < 0) {
+        return 0;
+    }
+    let big_1,
+        big_2,
+        biggest;
+    if(a < b) {
+        big_1 = b;
+    } else {
+        big_1 = a;
+    }
+    if (c < d) {
+        big_2 = d;
+    } else {
+        big_2 = c;
+    }
+    if(big_1 < big_2){
+        biggest = big_2;
+    } else {
+        biggest = big_1;
+    }
+    return biggest;
+}
+findMaxNumber(2, 11.2, 4, 7);
+
+//can be used Math.max(2, 11.2, 4, 7) - will output the largest number
+
+
+/*task 9  */
+
+function fib(number) {
+    if (typeof(number) !== 'number' || number <= 0 || !Number.isInteger(number)) {
+        return '';
+    }
+    let result = '';
+    let first = 0;
+    let second = 1;
+    for (let i = 0; i < number; i++) {
+        if (i + 1 === number) {
+            result += `${first}`;
+        } else {
+            result += `${first} `;
+        }
+
+        let third = first + second;
+        first = second;
+        second = third;
+    }
+    console.log(result);
+}
+fib(7);
