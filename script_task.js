@@ -354,4 +354,14 @@ function fib(number) {
     console.log(result);
 }
 fib(7);
-/* I am going to put through another computer */
+
+const arr = [2, 13, 26, 8, 18];
+// arr.sort();
+// console.log(arr); // the sort method is used for strings, but it can also be used for numbers
+
+arr.sort(compareNum); // the sort method is used for numbers when sort takes in function
+console.log(arr);
+
+function compareNum(a, b) {
+    return a - b;
+}
