@@ -21,7 +21,7 @@ showMyDB(personalMovieDB.privat);
 function checkupQuetion(quetion) {
     let answer;
     do {
-        answer = prompt(`${quetion}`, '').trim(); //trim() removing spaces
+        answer = prompt(`${quetion}`, '').trim(); //trim() removing spaces.
         if (isNaN(answer)) {
             alert('Відповідь має бути числовою!');
         }
