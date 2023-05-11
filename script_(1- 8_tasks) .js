@@ -330,38 +330,3 @@ findMaxNumber(2, 11.2, 4, 7);
 
 //can be used Math.max(2, 11.2, 4, 7) - will output the largest number
 
-
-/*task 9  */
-
-function fib(number) {
-    if (typeof(number) !== 'number' || number <= 0 || !Number.isInteger(number)) {
-        return '';
-    }
-    let result = '';
-    let first = 0;
-    let second = 1;
-    for (let i = 0; i < number; i++) {
-        if (i + 1 === number) {
-            result += `${first}`;
-        } else {
-            result += `${first} `;
-        }
-
-        let third = first + second;
-        first = second;
-        second = third;
-    }
-    console.log(result);
-}
-fib(7);
-
-const arr = [2, 13, 26, 8, 18];
-// arr.sort();
-// console.log(arr); // the sort method is used for strings, but it can also be used for numbers
-
-arr.sort(compareNum); // the sort method is used for numbers when sort takes in function
-console.log(arr);
-
-function compareNum(a, b) {
-    return a - b;
-}
