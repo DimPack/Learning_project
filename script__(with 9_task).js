@@ -130,5 +130,43 @@ function showProgrammingLangs(plan) {
     }
         
 }
-<<<<<<< HEAD
-showProgrammingLangs(personalPlanPeter)
+showProgrammingLangs(personalPlanPeter);
+
+/* task 12  */
+/*REVERS */
+
+const someString = 'This is some strange string';
+
+function reverse(str) {
+
+    if(typeof(str) !== 'string') {
+        console.log('Ошибка!');
+    } else {
+        console.log(str.split('').reverse().join(''));
+    }
+}
+
+reverse(someString)
+
+/*task with currency */
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+let currency = baseCurrencies.concat(additionalCurrencies);
+
+function availableCurr(arr, missingCurr) {
+    let infoCurrency = `Доступные валюты:\n`;
+    if(arr.length != 0) {
+        for (let item in arr) {
+            if(item === missingCurr){
+                continue;
+            }
+            infoCurrency += `${item}\n`
+        };
+        
+    } else {
+        console.log('Нет доступных валют');
+    }
+    console.log(infoCurrency);
+}
+
+availableCurr(currency, 'CNY');
