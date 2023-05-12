@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 /*task 9  */
 
 function fib(number) {
@@ -133,4 +131,3 @@ function showProgrammingLangs(plan) {
         
 }
 showProgrammingLangs(personalPlanPeter)
->>>>>>> parent of 0828257... complite task 12
