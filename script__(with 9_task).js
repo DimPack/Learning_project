@@ -132,6 +132,3 @@ function showProgrammingLangs(plan) {
 }
 <<<<<<< HEAD
 showProgrammingLangs(personalPlanPeter)
-=======
-showProgrammingLangs(personalPlanPeter)
->>>>>>> parent of 0828257... complite task 12
