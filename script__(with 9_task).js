@@ -156,11 +156,13 @@ let currency = baseCurrencies.concat(additionalCurrencies);
 function availableCurr(arr, missingCurr) {
     let infoCurrency = `Доступные валюты:\n`;
     if(arr.length != 0) {
+        
         for (let item in arr) {
-            if(item === missingCurr){
+
+            if(arr[item] === missingCurr){
                 continue;
             }
-            infoCurrency += `${item}\n`
+            infoCurrency += `${arr[item]}\n`
         };
         
     } else {
@@ -170,3 +172,23 @@ function availableCurr(arr, missingCurr) {
 }
 
 availableCurr(currency, 'CNY');
+
+/*Lesson 36 OOP */
+
+const solder = {
+    health: 400,
+    armmo: 100,
+    SetHelloy: function() {
+        console.log('Eeeeehyyy!')
+    }
+};
+
+const Jon = Object.create(solder); // crate prototype from JonH to solder
+
+//  const JonH = {
+//     health: 100,
+//  };
+
+//  Object.setPrototypeOf(JonH, solder); // crate prototype from JonH to solder
+
+// JonH.SetHelloy();
