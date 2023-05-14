@@ -192,3 +192,71 @@ const Jon = Object.create(solder); // crate prototype from JonH to solder
 //  Object.setPrototypeOf(JonH, solder); // crate prototype from JonH to solder
 
 // JonH.SetHelloy();
+
+
+/* Task 13 */
+
+const shoppingMallData = {
+    shops: [
+        {
+            width: 10,
+            length: 5
+        },
+        {
+            width: 15,
+            length: 7
+        },
+        {
+            width: 20,
+            length: 5
+        },
+        {
+            width: 8,
+            length: 10
+        }
+    ],
+    height: 5,
+    moneyPer1m3: 30,
+    budget: 50000
+}
+
+function isBudgetEnough(data) {
+    let sumS = 0,
+        sumB = 0;
+    data.shops.forEach(item => {
+
+        sumS += item.width * item.length;
+    });
+    sumB = (sumS * data.height) * data.moneyPer1m3;
+
+    if (sumB > data.budget) {
+        console.log('Бюджета недостаточно');
+    } else {
+        console.log('Бюджета достаточно'); 
+    }
+    console.log(sumB);
+}
+isBudgetEnough(shoppingMallData);
+
+
+/*task 14 */
+
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+
+function sortStudentsByGroups(arr) {
+    let game = [],
+        indexGame = 0;
+    arr.sort().forEach((item, i) => {
+        if (indexGame < 3) {
+            game[indexGame] = item;
+            arr[i] = game;
+            indexGame++;
+        } else {
+            indexGame = 0;
+        }
+   
+    });
+    console.log(arr);
+    console.log(game);
+}
+sortStudentsByGroups(students)

@@ -131,12 +131,21 @@ const personalMovieDB = {
             i++;
             personalMovieDB.genres[j]= genres;
             j++;
+
         } while (genres === '' || genres === null || genres.length > 50 || genres === 'number' || i <= 3);
+        personalMovieDB.genres.forEach((item, index) => {
+            console.log(`Улюблений жанр ${index + 1} - це ${item}`);
+        });
     }
 };
 
 personalMovieDB.checkupQuetion();
-
+personalMovieDB.ratingClient();
+personalMovieDB.showMyDB();
+personalMovieDB.toggleVisibleMyDB();
+personalMovieDB.showMyDB();
+personalMovieDB.movieTitlesAndTheirRating();
+personalMovieDB.writeYourGenres();
 // function checkupQuetion() {
 //     let answer;
 //     do {
