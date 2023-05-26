@@ -241,22 +241,23 @@ isBudgetEnough(shoppingMallData);
 
 /*task 14 */
 
-const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi'];
 
 function sortStudentsByGroups(arr) {
     let game = [],
-        indexGame = 0;
-    arr.sort().forEach((item, i) => {
-        if (indexGame < 3) {
-            game[indexGame] = item;
-            arr[i] = game;
-            indexGame++;
+        size = 3,
+        rest = [];
+    arr.sort();
+    for(let i = 0; i < arr.length; i += size) {
+        if (game.length < size) {
+            game.push(arr.slice(i, i + size));
         } else {
-            indexGame = 0;
+            for(let j = i; j < arr.length; j++) {
+                rest.push(arr[j]);
+            }  
         }
-   
-    });
-    console.log(arr);
-    console.log(game);
+    }
+    game.push(`Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(', ')}`);
+    return game;
 }
 sortStudentsByGroups(students)
