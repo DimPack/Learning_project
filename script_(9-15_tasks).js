@@ -33,8 +33,8 @@ function compareNum(a, b) {
     return a - b;
 }
 
-/* lesson 35 spred */
-/*copy obj */
+// /* lesson 35 spred */
+// /*copy obj */
 
 const numbers = {
     a: 2,
@@ -91,7 +91,7 @@ console.log(testObj);
 console.log(newObjTest);
 
 
-/*task 10 */
+// /*task 10 */
 const personalPlanPeter = {
     name: "Peter",
     age: "29",
@@ -132,8 +132,8 @@ function showProgrammingLangs(plan) {
 }
 showProgrammingLangs(personalPlanPeter);
 
-/* task 12  */
-/*REVERS */
+// /* task 12  */
+// /*REVERS */
 
 const someString = 'This is some strange string';
 
@@ -148,7 +148,7 @@ function reverse(str) {
 
 reverse(someString)
 
-/*task with currency */
+// /*task with currency */
 const baseCurrencies = ['USD', 'EUR'];
 const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
 let currency = baseCurrencies.concat(additionalCurrencies);
@@ -173,7 +173,7 @@ function availableCurr(arr, missingCurr) {
 
 availableCurr(currency, 'CNY');
 
-/*Lesson 36 OOP */
+// /*Lesson 36 OOP */
 
 const solder = {
     health: 400,
@@ -239,7 +239,7 @@ function isBudgetEnough(data) {
 isBudgetEnough(shoppingMallData);
 
 
-/*task 14 */
+// /*task 14 */
 
 const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi'];
 
@@ -261,3 +261,61 @@ function sortStudentsByGroups(arr) {
     return game;
 }
 sortStudentsByGroups(students)
+
+/*task 15 */
+
+const restorantData = {
+    menu: [
+        {
+            name: 'Salad Caesar',
+            price: '14$'
+        },
+        {
+            name: 'Pizza Diavola',
+            price: '25$'
+        },
+        {
+            name: 'Beefsteak',
+            price: '17$'
+        },
+        {
+            name: 'Napoleon',
+            price: '7$'
+        }
+    ],
+    waitors: [
+        {name: 'Alice', age: 22}, {name: 'John', age: 24}
+    ],
+    averageLunchPrice: '20$',
+    openNow: true
+};
+
+function isOpen(prop) {
+    let answer = '';
+    (prop !== true) ? answer = 'Закрыто' : answer = 'Открыто';
+
+    return answer;
+}
+
+console.log(isOpen(restorantData.openNow))
+
+function isAverageLunchPriceTrue(fDish, sDish, average) {
+    if (parseInt(fDish.price) + parseInt(sDish.price) < parseInt(average)) {
+        return 'Цена ниже средней';
+    } else {
+        return 'Цена выше средней';
+    }
+}
+
+console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
+function transferWaitors(data) {
+    const copy = Object.assign({}, data);
+
+    copy.waitors[0] = [{name: 'Mike', age: 32}];
+
+    console.log(copy.waitors);
+    return copy;
+}
+
+transferWaitors(restorantData);
+console.log(restorantData.waitors);
