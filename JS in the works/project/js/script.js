@@ -17,19 +17,34 @@
 const movieDB = {
     movies: [
         "Алігатор",
+        "Авіатор",
         "Лига справедливости",
         "Ла-ла лэнд",
         "Одержимость",
-        "Скотт Пилигрим против..."
+        "Скотт Пилигрим против...",
+        "Я легенда!"
     ]
 };
 
 const addDelete = document.querySelector('.promo__adv').remove(),
-        genre = document.querySelector('.promo__genre').innerHTML = "Драма",
+        genre = document.querySelector('.promo__genre').textContent = "Драма",
         bg = document.querySelector('.promo__bg').style.background = "url(./img/bg.jpg) center center/cover no-repeat",
-        list = document.querySelectorAll('.promo__interactive-item');
+        list = document.querySelector('.promo__interactive-list'); //querySelectorAll
 
+        //перший варіант вирішення задачі (вирішив я)
         movieDB.movies.sort()
-        list.forEach((item, i) => {
-            item.textContent = `${i + 1}. ${movieDB.movies[i]}`;
+        // list.forEach((item, i) => {
+        //     item.textContent = `${i + 1}. ${movieDB.movies[i]}`;
+        // });
+
+        //другий варіант вирішення задачі
+
+        list.innerHTML = "";
+        movieDB.movies.forEach((film, i) =>{
+            list.innerHTML += `
+            <li class="promo__interactive-item">
+                ${i+1}. ${film}
+                <div class="delete"></div>
+            </li>
+            `;
         });
