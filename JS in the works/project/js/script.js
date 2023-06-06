@@ -25,11 +25,14 @@ const movieDB = {
 };
 
 const addDelete = document.querySelector('.promo__adv').remove(),
-        genre = document.querySelector('.promo__genre').innerHTML = "Драма",
-        bg = document.querySelector('.promo__bg').style.background = "url(./img/bg.jpg) center center/cover no-repeat",
-        list = document.querySelectorAll('.promo__interactive-item');
+        genre = document.querySelector('.promo__genre').textContent = "Драма",
+        bg = document.querySelector('.promo__bg').style.background = "url(img/bg.jpg) center center/cover no-repeat",
+        list = document.querySelectorAll('.promo__interactive-item'); //querySelectorAll для 1 варіанту
 
-        movieDB.movies.sort()
-        list.forEach((item, i) => {
-            item.textContent = `${i + 1}. ${movieDB.movies[i]}`;
-        });
+        /*один із варіантів */
+        // movieDB.movies.sort()
+        // list.forEach((item, i) => {
+        //     item.textContent = `${i + 1}. ${movieDB.movies[i]}`;
+        // });
+
+        
