@@ -24,7 +24,8 @@ const deleteElement = (e) => {
     e.target.style.opacity = '0';
     i++;
     console.log(e.target);
-    if (i == 5) {
+    console.log(e.type);
+    if (i == 1) {
         btn_1.removeEventListener('click', deleteElement); 
     }
 };
