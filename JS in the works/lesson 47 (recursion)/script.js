@@ -121,3 +121,19 @@ const result = getTotalProgressByRecursion(students);
 console.log(result[0]/result[1]);
 
 // console.log(getTotalProgressByIteration(students));
+
+
+//ЗАДАЧА НА РЕКУРСІЮ
+
+function factorial(n) {
+    if(n <= 0) {
+        return 1;
+    }
+    else if(isNaN(n) || !Number.isInteger(n)) {
+       console.log('Не являється цілим числом.'); 
+    } 
+    else {
+        return (n * factorial(n - 1));
+    }
+};
+console.log(factorial(3));
